@@ -1,0 +1,12 @@
+name: CI
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: index.html 존재 확인 (간단한 테스트 대역)
+        run: test -f index.html && echo "index.html exists"
